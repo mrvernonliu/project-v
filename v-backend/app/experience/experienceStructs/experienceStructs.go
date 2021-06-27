@@ -7,6 +7,7 @@ import (
 
 type Experience struct {
 	Name string `json:"name"`
+	Title string `json:"title"`
 	IconUrl string `json:"iconUrl"`
 	StartDate time.Time `json:"startDate"`
 	EndDate time.Time `json:"endDate"`

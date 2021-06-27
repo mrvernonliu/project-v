@@ -1,0 +1,30 @@
+.experienceContainer {
+  display: grid;
+  grid-template-areas:
+          "logo details"
+          "blank details";
+  grid-template-columns: 150px 1fr;
+  grid-template-rows: 150px auto;
+  column-gap: 5px;
+  row-gap: 5px;
+  margin-top: 20px;
+}
+
+.logo {
+  grid-area: logo;
+  background-color: white;
+}
+
+.subtext {
+  color: $secondary-text-dark-theme;
+}
+
+.details {
+  grid-area: details;
+  display: flex;
+  flex-direction: column;
+}
+
+.tech {
+  display: flex;
+}

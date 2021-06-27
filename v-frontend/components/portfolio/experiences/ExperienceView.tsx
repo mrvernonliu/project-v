@@ -12,7 +12,15 @@ export default function ExperienceView(props: any) {
             <div>
                 {
                 experiences.experiences.map((experience) => (
-                    <ExperienceItem name={experience.name} iconUrl={experience.iconUrl} startDate={experience.startDate} endDate={experience.endDate} techStack={experience.techStack} key={experience.name} />
+                    <ExperienceItem
+                        name={experience.name}
+                        title={experience.title}
+                        iconUrl={experience.iconUrl}
+                        startDate={experience.startDate}
+                        endDate={experience.endDate}
+                        techStack={experience.techStack}
+                        key={experience.name}
+                    />
                 ))}
             </div>
         </div>

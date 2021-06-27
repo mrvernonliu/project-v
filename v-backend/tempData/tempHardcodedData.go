@@ -25,8 +25,9 @@ var tempHardcodedExperienceList = experienceStructs.ExperienceList{
 	Experiences: []experienceStructs.Experience {
 		{
 			Name:		"Electronic Arts",
+			Title:		"Software Engineer",
 			IconUrl:	"/ealogo.png",
-			StartDate: 	time.Date(2020, time.September, 0, 0,0, 0, 0, time.UTC),
+			StartDate: 	time.Date(2020, time.September, 10, 0,0, 0, 0, time.UTC),
 			EndDate: time.Now(),
 			TechStack: []languageStructs.Language {
 				{
@@ -41,9 +42,10 @@ var tempHardcodedExperienceList = experienceStructs.ExperienceList{
 		},
 		{
 			Name:		"Best Buy Canada",
+			Title:		"Software Developer Intern",
 			IconUrl:	"/bestbuylogo.jpg",
-			StartDate: 	time.Date(2019, time.April, 0, 0,0, 0, 0, time.UTC),
-			EndDate: time.Date(2019, time.September, 0, 0,0, 0, 0, time.UTC),
+			StartDate: 	time.Date(2019, time.April, 10, 0,0, 0, 0, time.UTC),
+			EndDate: time.Date(2019, time.August, 10, 0,0, 0, 0, time.UTC),
 			TechStack: []languageStructs.Language {
 				{
 					Name:	"JavaScript",
@@ -57,9 +59,10 @@ var tempHardcodedExperienceList = experienceStructs.ExperienceList{
 		},
 		{
 			Name:		"CA Technologies / Broadcom",
-			IconUrl:	"/calogo.jpg",
-			StartDate: 	time.Date(2018, time.September, 0, 0,0, 0, 0, time.UTC),
-			EndDate: time.Date(2019, time.April, 0, 0,0, 0, 0, time.UTC),
+			Title:		"Software Engineering Intern",
+			IconUrl:	"/broadcomlogo.jpg",
+			StartDate: 	time.Date(2018, time.September, 10, 0,0, 0, 0, time.UTC),
+			EndDate: time.Date(2019, time.May, 10, 0,0, 0, 0, time.UTC),
 			TechStack: []languageStructs.Language {
 				{
 					Name:	"JavaScript",
@@ -73,9 +76,10 @@ var tempHardcodedExperienceList = experienceStructs.ExperienceList{
 		},
 		{
 			Name:		"Ocean Networks Canada",
+			Title:		"Software Engineering Intern",
 			IconUrl:	"/onclogo.png",
-			StartDate: 	time.Date(2018, time.January, 0, 0,0, 0, 0, time.UTC),
-			EndDate: time.Date(2018, time.April, 0, 0,0, 0, 0, time.UTC),
+			StartDate: 	time.Date(2018, time.January, 10, 0,0, 0, 0, time.UTC),
+			EndDate: time.Date(2018, time.May, 10, 0,0, 0, 0, time.UTC),
 			TechStack: []languageStructs.Language {
 				{
 					Name:	"JavaScript",
