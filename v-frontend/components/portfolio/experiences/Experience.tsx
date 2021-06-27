@@ -9,9 +9,9 @@ const monthNames = ["January", "February", "March", "April", "May", "June",
 
 export default function ExperienceItem(props: Experience) {
     const startDateObject = new Date(props.startDate)
-    const endDateObject = new Date(props.endDate)
+    const endDateObject = props.endDate ? new Date(props.endDate) : new Date()
     const startTime = `${monthNames[startDateObject.getMonth()]} ${startDateObject.getFullYear()}`
-    const endTime = `${monthNames[endDateObject.getMonth()]}/${endDateObject.getFullYear()}`
+    const endTime = props.endDate ? `${monthNames[endDateObject.getMonth()]} ${endDateObject.getFullYear()}` : 'Present'
 
     const duration = getDuration(startDateObject, endDateObject);
 
@@ -40,7 +40,8 @@ export default function ExperienceItem(props: Experience) {
                 <br/>
                 <div className={styles.tech}>
                     { props.techStack.map((tech) => (
-                        <p>{tech.name}</p>
+                        <svg className={styles.skillIcons} viewBox="0 0 128 128" dangerouslySetInnerHTML={{ __html: tech.icon}} key={tech.language}>
+                        </svg>
                     ))}
                 </div>
             </div>

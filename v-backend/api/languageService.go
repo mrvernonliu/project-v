@@ -1,4 +1,4 @@
-package languages
+package api
 
 import (
 	"encoding/json"
@@ -7,7 +7,7 @@ import (
 	"net/http"
 )
 
-func ListLanguages(w http.ResponseWriter, r *http.Request) {
+func (db *DBHandler) ListLanguages(w http.ResponseWriter, r *http.Request) {
 	var languageList = tempData.GetHardcodedLanguages()
 	json.NewEncoder(w).Encode(languageList)
 	log.Println("Endpoint Hit: listLanguages")

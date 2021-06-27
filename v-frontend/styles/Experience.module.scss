@@ -28,3 +28,16 @@
 .tech {
   display: flex;
 }
+
+.skillIcons {
+  height: 48px;
+  width: 48px;
+  margin-right: 5px;
+}
+
+@media(max-width: 1024px) {
+  .skillIcons {
+    height: 32px;
+    width: 32px;
+  }
+}

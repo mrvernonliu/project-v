@@ -1,17 +1,16 @@
 import * as React from 'react'
-import {ExperienceList} from "./types/ExperienceList";
 import ExperienceItem from "./Experience";
+import {Experience} from "./types/Experience";
 
 export default function ExperienceView(props: any) {
-    const experiences: ExperienceList = props.experiences
-    console.log(experiences.experiences.map((experience) => experience.name))
+    const experiences: Experience[] = props.experiences
     return (
         <div>
             <h1>Experience</h1>
             <p>Here is where I have worked the tech that I have been able to learn while doing so.</p>
             <div>
                 {
-                experiences.experiences.map((experience) => (
+                experiences.map((experience) => (
                     <ExperienceItem
                         name={experience.name}
                         title={experience.title}

@@ -3,17 +3,21 @@ package api
 import (
 	"github.com/gorilla/mux"
 	"log"
-	"main/app/experience"
-	"main/app/languages"
+	"main/persistence"
 	"net/http"
 )
 
 type fn func(http.ResponseWriter, *http.Request)
 
-func CreateRoutes() http.Handler {
+type DBHandler struct {
+	Repos *persistence.DBRepos
+}
+
+func CreateRoutes(repos *persistence.DBRepos) http.Handler {
+	handler := DBHandler{Repos: repos}
 	router := mux.NewRouter().StrictSlash(true)
-	registerEndpoint(router, "/languages", "GET", languages.ListLanguages)
-	registerEndpoint(router, "/experiences", "GET", experience.ListExperience)
+	registerEndpoint(router, "/languages", "GET", handler.ListLanguages)
+	registerEndpoint(router, "/experiences", "GET", handler.ListExperience)
 
 
 	return router
