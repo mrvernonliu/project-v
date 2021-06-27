@@ -1,0 +1,23 @@
+.animationFadeIn {
+  animation: fade-in 3s 1;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Image fade-in animations */
+.fadeEnterActive {
+  transition: opacity 1s ease-in-out;
+}
+.fadeEnterTo {
+  opacity: 1;
+}
+.fadeEnter {
+  opacity: 0;
+}

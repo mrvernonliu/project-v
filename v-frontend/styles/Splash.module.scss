@@ -1,0 +1,73 @@
+.container {
+  background-color: $bg-color-dark-theme;
+  color: $primary-text-dark-theme;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.vernonImage {
+  border-radius: 50%;
+  height: 250px;
+}
+
+.title {
+  display: block;
+  font-size: 72px;
+}
+
+.infoWrapper {
+  color: $secondary-text-dark-theme;
+}
+
+.internalLinkWrapper {
+  padding-top: 50px;
+}
+
+.blueGlow {
+  animation: glow 1s infinite alternate;
+}
+
+.arrowContainer {
+  margin-top: 10vh;
+}
+
+.buttonBlue {
+  display: inline-block;
+  border-radius: 6px;
+  border: 2px solid $light-blue;
+  color: $light-blue;
+  padding: 10px 30px;
+  font-size: 18px;
+}
+
+.buttonBlue:hover {
+  color: #fff;
+  background-color: $light-blue;
+  text-decoration: none;
+}
+
+.buttonPink {
+  display: inline-block;
+  border-radius: 6px;
+  border: 2px solid $light-pink;
+  color: $light-pink;
+  padding: 10px 30px;
+  font-size: 18px;
+}
+
+.buttonPink:hover {
+  color: #fff;
+  background-color: $light-pink;
+  text-decoration: none;
+}
+
+.scrollMessage {
+  margin-top: 60px;
+  color: $light-blue;
+  font-weight: 800;
+  letter-spacing: 2px;
+}

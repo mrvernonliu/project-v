@@ -1,0 +1,17 @@
+.animatedArrow {
+  color: $light-blue;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: bounce;
+  animation-timing-function: ease;
+}
+
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  10%  { transform: translateY(0); }
+  30%  { transform: translateY(50px); }
+  50%  { transform: translateY(0); }
+  60%  { transform: translateY(10px); }
+  70%  { transform: translateY(0); }
+  100% { transform: translateY(0); }
+}
