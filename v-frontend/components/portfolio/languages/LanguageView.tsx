@@ -1,16 +1,16 @@
 import * as React from 'react'
 import {Language} from "./types/Language";
 import styles from "../../../styles/LanguageView.module.scss"
-import {useEffect, useState} from "react";
+import {useState} from "react";
+import {SelectedLanguage} from "./types/SelectedLanguage";
+import UsageYearsChart from "./UsageYearsChart";
 
-export interface SelectedLanguage {
-    name: string,
-    usageYears: number[]
+interface LanguageViewProps {
+    languages: Language[]
 }
 
-export default function LanguageView(props: any) {
+export default function LanguageView(props: LanguageViewProps) {
     const [selectedLanguages, setSelectedLanguages] = useState<SelectedLanguage[]>([])
-    const languages: Language[] = props.languages
 
     const onSkillClick = (selectedLanguage: SelectedLanguage) => {
         if (selectedLanguages.filter((language) => language.name === selectedLanguage.name).length !== 0) {
@@ -26,7 +26,7 @@ export default function LanguageView(props: any) {
             <p>Here is a more comprehensive of the technologies that I have worked with.</p>
             <div>
                 {
-                    languages.map((language) => (
+                    props.languages.map((language) => (
                         <span
                             className={styles.skillButton}
                             key={`${language.name}-technicalskills`}
@@ -38,6 +38,7 @@ export default function LanguageView(props: any) {
                     ))
                 }
             </div>
+            <UsageYearsChart selectedLanguages={selectedLanguages} />
         </div>
     )
 }

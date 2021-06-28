@@ -7,28 +7,32 @@ const monthNames = ["January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
 ];
 
-export default function ExperienceItem(props: Experience) {
-    const startDateObject = new Date(props.startDate)
-    const endDateObject = props.endDate ? new Date(props.endDate) : new Date()
+interface ExperienceItemProps {
+    experience: Experience
+}
+
+export default function ExperienceItem(props: ExperienceItemProps) {
+    const startDateObject = new Date(props.experience.startDate)
+    const endDateObject = props.experience.endDate ? new Date(props.experience.endDate) : new Date()
     const startTime = `${monthNames[startDateObject.getMonth()]} ${startDateObject.getFullYear()}`
-    const endTime = props.endDate ? `${monthNames[endDateObject.getMonth()]} ${endDateObject.getFullYear()}` : 'Present'
+    const endTime = props.experience.endDate ? `${monthNames[endDateObject.getMonth()]} ${endDateObject.getFullYear()}` : 'Present'
 
     const duration = getDuration(startDateObject, endDateObject);
     return (
         <div className={styles.experienceContainer}>
             <Image
-                src={props.iconUrl}
-                alt={`${props.name} logo`}
+                src={props.experience.iconUrl}
+                alt={`${props.experience.name} logo`}
                 height={"150px"}
                 width={"150px"}
                 className={styles.logo}
             />
             <div className={styles.details}>
                 <h2>
-                    { props.name }
+                    { props.experience.name }
                 </h2>
                 <h3>
-                    { props.title }
+                    { props.experience.title }
                 </h3>
                 <p className={styles.subtext}>
                     {startTime} - {endTime}
@@ -38,7 +42,7 @@ export default function ExperienceItem(props: Experience) {
                 </p>
                 <br/>
                 <div className={styles.tech}>
-                    { props.techStack.map((tech) => (
+                    { props.experience.techStack.map((tech) => (
                         <div className={styles.skillIcons}
                              style={ tech.whiteBackground ? {backgroundColor: "white"} : {}}
                              dangerouslySetInnerHTML={{ __html: tech.icon}} key={tech.language}>
