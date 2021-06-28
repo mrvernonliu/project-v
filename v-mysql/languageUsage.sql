@@ -65,6 +65,9 @@ INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('Kotlin'
 
 INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('Kubernetes', 2021);
 
+INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('MongoDB', 2017);
+INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('MongoDB', 2021);
+
 INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('MySQL', 2017);
 INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('MySQL', 2018);
 INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('MySQL', 2019);
@@ -101,13 +104,6 @@ INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('React',
 INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('Redux', 2019);
 INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('Redux', 2020);
 INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('Redux', 2021);
-
-INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('REST', 2016);
-INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('REST', 2017);
-INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('REST', 2018);
-INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('REST', 2019);
-INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('REST', 2020);
-INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('REST', 2021);
 
 INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('SCSS', 2019);
 INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('SCSS', 2020);

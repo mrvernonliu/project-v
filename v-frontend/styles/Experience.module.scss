@@ -3,8 +3,8 @@
   grid-template-areas:
           "logo details"
           "blank details";
-  grid-template-columns: 150px 1fr;
-  grid-template-rows: 150px auto;
+  grid-template-columns: 175px 1fr;
+  grid-template-rows: 175px auto;
   column-gap: 5px;
   row-gap: 5px;
   margin-top: 20px;
@@ -27,12 +27,15 @@
 
 .tech {
   display: flex;
+  align-content: end;
+  margin-top: 18px;
 }
 
 .skillIcons {
   height: 48px;
   width: 48px;
   margin-right: 5px;
+  padding: 5px;
 }
 
 @media(max-width: 1024px) {

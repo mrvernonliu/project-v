@@ -3,8 +3,9 @@ import SplashScreen from "../components/portfolio/splashscreen/Splash";
 import AboutMe from "../components/portfolio/aboutme/AboutMe";
 import ExperienceView from "../components/portfolio/experiences/ExperienceView";
 import {InferGetStaticPropsType} from "next";
+import LanguageView from "../components/portfolio/languages/LanguageView";
 
-export default function Home({experiences}: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Home({experiences, languages}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
       <div>
           <Head>
@@ -23,7 +24,12 @@ export default function Home({experiences}: InferGetStaticPropsType<typeof getSt
                   <AboutMe />
                   <br />
                   <br />
-                  <ExperienceView experiences={experiences}/>
+                  <ExperienceView experiences={experiences} />
+                  <br />
+                  <br />
+                  <LanguageView languages={languages} />
+                  <br />
+                  <br />
               </div>
           </div>
       </div>
@@ -31,13 +37,17 @@ export default function Home({experiences}: InferGetStaticPropsType<typeof getSt
 }
 
 export async function getStaticProps() {
-    console.log('fetching experiences')
-    const res = await fetch("http://localhost:8080/experiences")
-    console.log(res)
-    const experiences = await res.json()
+    const [experiences, languages] = await Promise.all(
+        [
+            fetch("http://localhost:8080/experiences").then((res) => res.json()),
+            fetch("http://localhost:8080/languages").then((res) => res.json())
+        ]
+    )
+
     return {
         props: {
             experiences,
+            languages
         },
     }
 }

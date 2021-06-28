@@ -35,7 +35,7 @@ func (repo *ExperienceRepo) ListExperiences() []models.Experience {
 func (repo *ExperienceRepo) populateExperienceTechStack(wg *sync.WaitGroup, experience *models.Experience) {
 	defer wg.Done()
 	var techstack []models.LanguageTechStack
-	statement, err := repo.db.Preparex(`SELECT language, icon FROM techstack JOIN languages WHERE company = ? AND language = name`)
+	statement, err := repo.db.Preparex(`SELECT language, whiteBackground, icon FROM techstack JOIN languages WHERE company = ? AND language = name`)
 	err = statement.Select(&techstack, experience.Name)
 	if err != nil {
 		log.Fatalln(err)

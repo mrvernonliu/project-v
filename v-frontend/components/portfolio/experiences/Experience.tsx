@@ -14,7 +14,6 @@ export default function ExperienceItem(props: Experience) {
     const endTime = props.endDate ? `${monthNames[endDateObject.getMonth()]} ${endDateObject.getFullYear()}` : 'Present'
 
     const duration = getDuration(startDateObject, endDateObject);
-
     return (
         <div className={styles.experienceContainer}>
             <Image
@@ -40,8 +39,10 @@ export default function ExperienceItem(props: Experience) {
                 <br/>
                 <div className={styles.tech}>
                     { props.techStack.map((tech) => (
-                        <svg className={styles.skillIcons} viewBox="0 0 128 128" dangerouslySetInnerHTML={{ __html: tech.icon}} key={tech.language}>
-                        </svg>
+                        <div className={styles.skillIcons}
+                             style={ tech.whiteBackground ? {backgroundColor: "white"} : {}}
+                             dangerouslySetInnerHTML={{ __html: tech.icon}} key={tech.language}>
+                        </div>
                     ))}
                 </div>
             </div>

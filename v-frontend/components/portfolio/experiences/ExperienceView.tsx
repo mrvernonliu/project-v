@@ -7,7 +7,7 @@ export default function ExperienceView(props: any) {
     return (
         <div>
             <h1>Experience</h1>
-            <p>Here is where I have worked the tech that I have been able to learn while doing so.</p>
+            <p>Here is where I have worked and a (non-exhaustive) list of technologies that I frequently used.</p>
             <div>
                 {
                 experiences.map((experience) => (
