@@ -1,0 +1,17 @@
+.chartContainer {
+  height: 300px;
+}
+
+.noData {
+  margin: 0 auto;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: $light-purple-transparent;
+}
+
+.chartWarning {
+  color: $secondary-text-dark-theme;
+}

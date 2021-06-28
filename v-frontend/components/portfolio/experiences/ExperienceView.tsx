@@ -14,7 +14,7 @@ export default function ExperienceView(props: ExperienceViewProps) {
             <div>
                 {
                 props.experiences.map((experience) => (
-                    <ExperienceItem experience={experience} />
+                    <ExperienceItem experience={experience} key={`${experience.name}-experienceView`} />
                 ))}
             </div>
         </div>

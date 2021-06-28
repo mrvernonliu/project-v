@@ -4,9 +4,14 @@ import styles from "../../../styles/LanguageView.module.scss"
 import {useState} from "react";
 import {SelectedLanguage} from "./types/SelectedLanguage";
 import UsageYearsChart from "./UsageYearsChart";
+import {pastelColors} from "./PastelColors";
 
 interface LanguageViewProps {
     languages: Language[]
+}
+
+interface BorderColor {
+    borderColor: string
 }
 
 export default function LanguageView(props: LanguageViewProps) {
@@ -20,15 +25,21 @@ export default function LanguageView(props: LanguageViewProps) {
         }
     }
 
+    // TODO: changing border colour of the selector doesn't work
+    const borderColour: BorderColor = {borderColor: pastelColors[selectedLanguages.length]}
+
     return (
         <div>
             <h1>Technical Skills</h1>
             <p>Here is a more comprehensive of the technologies that I have worked with.</p>
+            <br/>
+            <br/>
             <div>
                 {
                     props.languages.map((language) => (
                         <span
                             className={styles.skillButton}
+                            style={borderColour}
                             key={`${language.name}-technicalskills`}
                             onClick={() => onSkillClick({name: language.name, usageYears: language.usageYears})}
                         >
@@ -38,7 +49,11 @@ export default function LanguageView(props: LanguageViewProps) {
                     ))
                 }
             </div>
+            <br/>
+            <br/>
             <UsageYearsChart selectedLanguages={selectedLanguages} />
+            <br/>
+            <br/>
         </div>
     )
 }
