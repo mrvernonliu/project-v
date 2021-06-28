@@ -8,12 +8,14 @@ import (
 )
 
 type DBRepos struct {
-	ExperienceRepo *repositories.ExperienceRepo
+	ExperienceRepo 	*repositories.ExperienceRepo
+	LanguageRepo 	*repositories.LanguageRepo
 }
 
 func initDBRepos(db *sqlx.DB) *DBRepos {
 	return &DBRepos{
 		ExperienceRepo: repositories.InitExperienceRepo(db),
+		LanguageRepo: repositories.InitLanguageRepo(db),
 	}
 }
 

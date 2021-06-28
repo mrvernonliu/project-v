@@ -3,12 +3,11 @@ package api
 import (
 	"encoding/json"
 	"log"
-	"main/tempData"
 	"net/http"
 )
 
 func (db *DBHandler) ListLanguages(w http.ResponseWriter, r *http.Request) {
-	var languageList = tempData.GetHardcodedLanguages()
+	var languageList = db.Repos.LanguageRepo.ListLanguagesWithYears()
 	json.NewEncoder(w).Encode(languageList)
 	log.Println("Endpoint Hit: listLanguages")
 }

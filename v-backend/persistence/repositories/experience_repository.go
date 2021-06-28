@@ -33,7 +33,6 @@ func (repo *ExperienceRepo) ListExperiences() []models.Experience {
 }
 
 func (repo *ExperienceRepo) populateExperienceTechStack(wg *sync.WaitGroup, experience *models.Experience) {
-	log.Println("call")
 	defer wg.Done()
 	var techstack []models.LanguageTechStack
 	statement, err := repo.db.Preparex(`SELECT language, icon FROM techstack JOIN languages WHERE company = ? AND language = name`)
