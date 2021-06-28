@@ -19,7 +19,7 @@ export default function UsageYearsChart(props: UsageYearsChartProps) {
             return {
                 label: selectedLanguage.name,
                 data: years.map((year) => {
-                    if (selectedLanguage.usageYears.includes(year)) {
+                    if (selectedLanguage.usageYears?.includes(year)) {
                         return 1
                     } else {
                         return 0
@@ -32,19 +32,23 @@ export default function UsageYearsChart(props: UsageYearsChartProps) {
         })
     };
 
+    // TODO: Cannot change chart axis colour??? Why??? I also tried backgroundColor
     const options = {
         responsive:true,
         maintainAspectRatio: false,
         scales: {
+            xAxes: [{gridLines: {color: "#ffffff"}}],
             yAxes: [
                 {
+                    gridLines: {color: "#ffffff"},
                     ticks: {
+                        fontColor: "white",
                         max: 1,
                         min: 0,
                         stepSize: 1
                     },
                 },
-            ],
+            ]
         },
     };
 
@@ -64,7 +68,7 @@ export default function UsageYearsChart(props: UsageYearsChartProps) {
             { content }
             <br/>
             <div className={styles.chartWarning}>
-                ( Please do not read too deeply into this chart. I just built this for fun the values do not reflect my competence in each tool.)
+                (Please do not read too deeply into this chart. I just built this for fun the values do not reflect my competence in each tool.)
             </div>
         </div>
     );

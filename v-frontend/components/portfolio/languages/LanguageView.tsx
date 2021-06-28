@@ -10,8 +10,8 @@ interface LanguageViewProps {
     languages: Language[]
 }
 
-interface BorderColor {
-    borderColor: string
+interface BorderStyles {
+    border: string,
 }
 
 export default function LanguageView(props: LanguageViewProps) {
@@ -25,8 +25,15 @@ export default function LanguageView(props: LanguageViewProps) {
         }
     }
 
-    // TODO: changing border colour of the selector doesn't work
-    const borderColour: BorderColor = {borderColor: pastelColors[selectedLanguages.length]}
+    function getBorderColour(language: Language) {
+        let colourIndex = -1
+        selectedLanguages.forEach((selectedLanguage, i) => {
+            if (selectedLanguage.name === language.name) {
+                colourIndex = i;
+            }
+        })
+        return colourIndex !== -1 ? `3px solid ${pastelColors[colourIndex]}` : ""
+    }
 
     return (
         <div>
@@ -36,17 +43,22 @@ export default function LanguageView(props: LanguageViewProps) {
             <br/>
             <div>
                 {
-                    props.languages.map((language) => (
-                        <span
-                            className={styles.skillButton}
-                            style={borderColour}
-                            key={`${language.name}-technicalskills`}
-                            onClick={() => onSkillClick({name: language.name, usageYears: language.usageYears})}
-                        >
-                            <svg className={styles.skillIcons} style={ language.whiteBackground ? {backgroundColor: "white"} : {}} viewBox="0 0 128 128" dangerouslySetInnerHTML={{ __html: language.icon}} key={language.name}>
+                    props.languages.map((language) => {
+                        const borderStyle = getBorderColour(language)
+                        return (
+                            <span
+                                className={styles.skillButton}
+                                key={`${language.name}-technicalskills`}
+                                onClick={() => onSkillClick({name: language.name, usageYears: language.usageYears})}
+                            >
+                            <svg className={styles.skillIcons}
+                                 style={language.whiteBackground ? {backgroundColor: "white", border: borderStyle} : {border: borderStyle}}
+                                 viewBox="0 0 128 128" dangerouslySetInnerHTML={{__html: language.icon}}
+                                 key={language.name}>
                             </svg>
                         </span>
-                    ))
+                        )
+                    })
                 }
             </div>
             <br/>
