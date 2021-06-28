@@ -2,14 +2,19 @@
   height: 300px;
 }
 
-.noData {
+.noDataContainer {
   margin: 0 auto;
   min-height: 300px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: $light-purple-transparent;
+}
+
+.noDataMessage {
+  color: $light-blue;
+  animation: pulse 5s infinite;
 }
 
 .chartWarning {

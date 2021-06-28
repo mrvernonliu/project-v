@@ -3,7 +3,7 @@ import Image from "next/Image"
 import styles from "../../../styles/Splash.module.scss";
 import animations from "../../../styles/Animations.module.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import AnimatedArrow from "../../common/AnimatedArrow";
+import AnimatedDownArrow from "../../common/AnimatedDownArrow";
 
 export default function SplashScreen() {
     const faceUrl = "/face.png"
@@ -48,7 +48,7 @@ export default function SplashScreen() {
                 </a>
             </div>
             <div className={styles.arrowContainer}>
-                <AnimatedArrow />
+                <AnimatedDownArrow />
             </div>
             <div className={styles.scrollMessage}>
                 Scroll Down

@@ -4,6 +4,7 @@ import {Line} from "react-chartjs-2";
 import styles from "../../../styles/UsageYearsChart.module.scss"
 import {pastelColors} from "./PastelColors";
 import * as React from "react";
+import AnimatedUpArrow from "../../common/AnimatedUpArrow";
 
 interface UsageYearsChartProps {
     selectedLanguages: SelectedLanguage[]
@@ -55,21 +56,32 @@ export default function UsageYearsChart(props: UsageYearsChartProps) {
     let content
     if (props.selectedLanguages.length > 0) {
         content = (
-            <div className={styles.chartContainer}>
-                <Line data={data} options={options} type={"line"} />
+            <div>
+                <div className={styles.chartContainer}>
+                    <Line data={data} options={options} type={"line"} />
+                </div>
+                <br/>
+                <div className={styles.chartWarning}>
+                    (Please do not read too deeply into this chart. I just built this for fun the values do not reflect my competence in each tool.)
+                </div>
             </div>
         )
     } else {
-        content = <h3 className={styles.noData}>No Data Selected</h3>
+        content = (
+            <div className={styles.noDataContainer}>
+                <AnimatedUpArrow />
+                <br />
+                <br />
+                <h3 className={styles.noDataMessage}>
+                    Click on one of the tools above!
+                </h3>
+            </div>
+        )
     }
 
     return(
         <div>
             { content }
-            <br/>
-            <div className={styles.chartWarning}>
-                (Please do not read too deeply into this chart. I just built this for fun the values do not reflect my competence in each tool.)
-            </div>
         </div>
     );
 
