@@ -19,6 +19,8 @@ INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('Docker'
 INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('Docker', 2020);
 INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('Docker', 2021);
 
+INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('Electron', 2020);
+
 INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('Express', 2018);
 INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('Express', 2020);
 

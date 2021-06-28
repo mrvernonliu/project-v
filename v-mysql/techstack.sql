@@ -63,3 +63,6 @@ VALUES('Electronic Arts','Helm');
 
 INSERT IGNORE INTO `projectV`.`techstack`(`company`,`language`)
 VALUES('Electronic Arts','Kubernetes');
+
+INSERT IGNORE INTO `projectV`.`techstack`(`company`,`language`)
+VALUES('Electronic Arts','AWS');
