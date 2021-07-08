@@ -2,6 +2,8 @@ import Image from "next/Image"
 import {Experience} from "./types/Experience";
 
 import styles from "../../../styles/Experience.module.scss"
+import ReactTooltip from "react-tooltip";
+import {useEffect, useState} from "react";
 
 const monthNames = ["January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
@@ -12,6 +14,13 @@ interface ExperienceItemProps {
 }
 
 export default function ExperienceItem(props: ExperienceItemProps) {
+    // Required for react tooltip bug https://stackoverflow.com/questions/64079321/react-tooltip-and-next-js-ssr-issue
+    const [isTooltipVisible, setTooltipVisibility] = useState(false);
+
+    useEffect(() => {
+        setTooltipVisibility(true);
+    }, []);
+
     const startDateObject = new Date(props.experience.startDate)
     const endDateObject = props.experience.endDate ? new Date(props.experience.endDate) : new Date()
     const startTime = `${monthNames[startDateObject.getMonth()]} ${startDateObject.getFullYear()}`
@@ -23,15 +32,15 @@ export default function ExperienceItem(props: ExperienceItemProps) {
             <Image
                 src={props.experience.iconUrl}
                 alt={`${props.experience.name} logo`}
-                height={"150px"}
-                width={"150px"}
+                height={"500px"}
+                width={"500px"}
                 className={styles.logo}
             />
             <div className={styles.details}>
-                <h2>
+                <h2 className={styles.companyName}>
                     { props.experience.name }
                 </h2>
-                <h3>
+                <h3 className={styles.companyTitle}>
                     { props.experience.title }
                 </h3>
                 <p className={styles.subtext}>
@@ -41,14 +50,24 @@ export default function ExperienceItem(props: ExperienceItemProps) {
                     {duration}
                 </p>
                 <br/>
-                <div className={styles.tech}>
-                    { props.experience.techStack.map((tech) => (
-                        <div className={styles.skillIcons}
-                             style={ tech.whiteBackground ? {backgroundColor: "white"} : {}}
-                             dangerouslySetInnerHTML={{ __html: tech.icon}} key={tech.language}>
-                        </div>
-                    ))}
-                </div>
+                {   isTooltipVisible &&
+                    <div className={styles.tech}>
+                        { props.experience.techStack.map((tech) => (
+                            <span key={tech.language + 'container'}>
+                            <span
+                                className={styles.skillIcons}
+                                style={ tech.whiteBackground ? {backgroundColor: "white"} : {}}
+                                data-tip
+                                data-for={tech.language + 'experience'}
+                                dangerouslySetInnerHTML={{ __html: tech.icon}}
+                            />
+                            <ReactTooltip id={tech.language + 'experience'} place="top" type="light" effect="solid" key={tech.language + 'experiencetooltip'}>
+                                <h4>{tech.language}</h4>
+                            </ReactTooltip>
+                        </span>
+                        ))}
+                    </div>
+                }
             </div>
         </div>
     )

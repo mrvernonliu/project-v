@@ -1,22 +1,48 @@
-.container {
+.splashBackground {
+  width: 100vw;
+  height: 100vh;
   background-color: $bg-color-dark-theme;
+  background: radial-gradient(ellipse at top, $very-dark-blue 0%, $bg-color-dark-theme 60%);
+
+  @media (max-width: 1024px) {
+  background: linear-gradient($very-dark-blue 0%, $bg-color-dark-theme 70%);
+  }
+}
+
+.container {
   color: $primary-text-dark-theme;
-  margin: 0 auto;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
+.pictureContainer {
+  position: relative;
+  width: 300px;
+  height: 300px;
+
+  @media (max-width: 1024px) {
+    width: 250px;
+    height: 250px;
+  }
+
+  @media (max-width: 728px) {
+    width: 200px;
+    height: 200px;
+  }
+}
+
 .vernonImage {
   border-radius: 50%;
-  height: 250px;
+  padding: 10px !important;
 }
 
 .title {
   display: block;
-  font-size: 72px;
+  font-size: 48px;
 }
 
 .infoWrapper {
@@ -32,7 +58,8 @@
 }
 
 .arrowContainer {
-  margin-top: 10vh;
+  margin-top: 40px;
+  margin-bottom: 30px;
 }
 
 .buttonBlue {
@@ -63,11 +90,4 @@
   color: #fff;
   background-color: $light-pink;
   text-decoration: none;
-}
-
-.scrollMessage {
-  margin-top: 60px;
-  color: $light-blue;
-  font-weight: 800;
-  letter-spacing: 2px;
 }

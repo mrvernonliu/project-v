@@ -38,6 +38,12 @@ INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('Golang'
 INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('gRPC', 2020);
 INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('gRPC', 2021);
 
+INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('Gradle', 2017);
+INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('Gradle', 2018);
+INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('Gradle', 2019);
+INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('Gradle', 2020);
+INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('Gradle', 2021);
+
 INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('HTML', 2016);
 INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('HTML', 2017);
 INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('HTML', 2018);
@@ -83,9 +89,16 @@ INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('Nginx',
 INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('Nginx', 2020);
 INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('Nginx', 2021);
 
+INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('NodeJS', 2017);
 INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('NodeJS', 2018);
 INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('NodeJS', 2019);
 INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('NodeJS', 2020);
+
+INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('npm', 2017);
+INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('npm', 2018);
+INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('npm', 2019);
+INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('npm', 2020);
+INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('npm', 2021);
 
 INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('OAuth2', 2019);
 INSERT IGNORE INTO `projectV`.`languageUsage`(`language`,`year`) VALUES('OAuth2', 2020);

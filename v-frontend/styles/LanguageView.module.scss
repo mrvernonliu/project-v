@@ -1,9 +1,54 @@
+.searchAndOrderBy {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.orderBy {
+  margin-left: 12px;
+  font-size: 20px;
+
+  @media (max-width: 728px) {
+    margin-left: 0px;
+    margin-top: 10px;
+  }
+}
+
+.sortMessage {
+  font-size: 16px;
+  margin-right: 4px;
+}
+
+.selected {
+  color: white !important;
+  opacity: 100% !important;
+}
+
+.selection {
+  font-weight: 800;
+  color: lightgray;
+  opacity: 50%;
+  margin-right: 10px;
+
+  &:hover {
+   color: $light-blue;
+    opacity: 100%;
+  }
+}
+
 .skillIcons {
   height: 78px;
   width: 78px;
   padding: 4px;
   margin-left: 5px;
   margin-top: 5px;
+
+  @media (max-width: 728px){
+    height: 48px;
+    width: 48px;
+  }
 }
 
 .skillIcons:hover {

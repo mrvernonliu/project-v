@@ -76,6 +76,11 @@
   flex-wrap: wrap;
   max-width: 800px;
   margin-top: 3rem;
+
+  @media (max-width: 600px) {
+    width: 100%;
+    flex-direction: column;
+  }
 }
 
 .card {
@@ -113,9 +118,4 @@
   margin-left: 0.5rem;
 }
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
-}
+

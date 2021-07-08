@@ -18,7 +18,7 @@ func CreateRoutes(repos *persistence.DBRepos) http.Handler {
 	router := mux.NewRouter().StrictSlash(true)
 	registerEndpoint(router, "/languages", "GET", handler.ListLanguages)
 	registerEndpoint(router, "/experiences", "GET", handler.ListExperience)
-
+	registerEndpoint(router, "/projects", "GET", handler.ListProjects)
 
 	return router
 }

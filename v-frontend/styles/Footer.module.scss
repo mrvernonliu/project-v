@@ -1,0 +1,19 @@
+.footerBackground {
+  width: 100vw;
+  height: 100vh;
+  background-color: $bg-color-dark-theme;
+  background: radial-gradient(ellipse at bottom, $very-dark-blue 0%, $bg-color-dark-theme 60%);
+
+  @media (max-width: 1024px) {
+    background: linear-gradient($bg-color-dark-theme 0%, $very-dark-blue 70%);
+  }
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
